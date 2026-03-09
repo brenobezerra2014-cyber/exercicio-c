@@ -20,13 +20,13 @@ int main(){
         media_turma += media[i];
     }
 
-    media_turma = mediaTurma/30;
+    media_turma = media_turma/30;
 
-    printf("\nMedia da turma: %.2lf\n", mediaTurma);
+    printf("\nMedia da turma: %.2lf\n", media_turma);
 
 
     for(i = 0; i < 30; i++){
-        if(media[i] > mediaTurma){
+        if(media[i] > media_turma){
             printf("Aluno %d  Nota1: %.2lf  Nota2: %.2lf  Media: %.2lf\n",  i+1, nota1[i], nota2[i], media[i]);          
         }
     }
