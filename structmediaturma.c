@@ -3,15 +3,15 @@
 #define TAM 30
 
 struct Aluno {
-    float nota1;
-    float nota2;
-    float media;
+    double nota1;
+    double nota2;
+    double media;
 };
 
 void preencherAluno(struct Aluno *a);
 void calcularMediaAluno(struct Aluno *a);
 float calcularMediaTurma(struct Aluno alunos[], int n);
-void imprimirAcimaMedia(struct Aluno alunos[], int n, float media);
+void imprimirAcimaMedia(struct Aluno alunos[], int n, double media);
 // main
 int main() {
     struct Aluno alunos[TAM];
@@ -40,8 +40,8 @@ void calcularMediaAluno(struct Aluno *a) {
     a->media = (2 * a->nota1 + 3 * a->nota2) / 5;
 }
 //  calcular  a media da turma
-float calcularMediaTurma(struct Aluno alunos[], int n) {
-    float soma = 0;
+double calcularMediaTurma(struct Aluno alunos[], int n) {
+    double soma = 0;
 
     for (int i = 0; i < n; i++) {
         soma += alunos[i].media;
@@ -50,7 +50,7 @@ float calcularMediaTurma(struct Aluno alunos[], int n) {
     return soma / n;
 }
 //  imprimir alunos acima da média da turma
-void imprimirAcimaMedia(struct Aluno alunos[], int n, float media) {
+void imprimirAcimaMedia(struct Aluno alunos[], int n, double media) {
     for (int i = 0; i < n; i++) {
         if (alunos[i].media > media) {
             printf("%.2f %.2f %.2f\n",
