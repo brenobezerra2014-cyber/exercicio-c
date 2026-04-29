@@ -32,6 +32,7 @@ int main() {
 }
 // Função para preencher as notas do aluno
 void preencherAluno(struct Aluno *a) {
+    printf("digite a nota 1 e 2 : ");
     scanf("%lf", &a->nota1);
     scanf("%lf", &a->nota2);
 }
