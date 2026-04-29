@@ -10,7 +10,7 @@ struct Aluno {
 
 void preencherAluno(struct Aluno *a);
 void calcularMediaAluno(struct Aluno *a);
-float calcularMediaTurma(struct Aluno alunos[], int n);
+double calcularMediaTurma(struct Aluno alunos[], int n);
 void imprimirAcimaMedia(struct Aluno alunos[], int n, double media);
 // main
 int main() {
