@@ -15,7 +15,7 @@ void imprimirAcimaMedia(struct Aluno alunos[], int n, double media);
 // main
 int main() {
     struct Aluno alunos[TAM];
-    float mediaTurma;
+    double  mediaTurma;
 
     for (int i = 0; i < TAM; i++) {
         preencherAluno(&alunos[i]);
