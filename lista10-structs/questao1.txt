@@ -1,0 +1,24 @@
+Estado 1
+Nome do estado: Pernambuco
+Numero de veiculos: 34
+Numero de acidentes: 22
+
+Estado 2
+Nome do estado: Espirito santo
+Numero de veiculos: 30
+Numero de acidentes: 2
+
+Estado 3
+Nome do estado: Sao paulo
+Numero de veiculos: 40
+Numero de acidentes: 12
+
+Estado 4
+Nome do estado: Rio de janeiro
+Numero de veiculos: 12
+Numero de acidentes: 9
+
+Estado 5
+Nome do estado: Amazonas
+Numero de veiculos: 19
+Numero de acidentes: 11
