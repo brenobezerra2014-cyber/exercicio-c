@@ -1,0 +1,95 @@
+===== MENU =====
+1 - Cadastrar conta
+2 - Listar contas
+3 - Deposito
+4 - Saque
+0 - Sair
+
+Opcao: 1
+
+Numero da conta: 101
+Nome: Breno Araujo
+CPF: 12345678900
+Telefone: 81999999999
+Saldo inicial: 500
+
+Conta cadastrada com sucesso!
+
+===== MENU =====
+1 - Cadastrar conta
+2 - Listar contas
+3 - Deposito
+4 - Saque
+0 - Sair
+
+Opcao: 1
+
+Numero da conta: 102
+Nome: Maria Silva
+CPF: 98765432100
+Telefone: 81988888888
+Saldo inicial: 1000
+
+Conta cadastrada com sucesso!
+
+===== MENU =====
+1 - Cadastrar conta
+2 - Listar contas
+3 - Deposito
+4 - Saque
+0 - Sair
+
+Opcao: 2
+
+=== LISTA DE CONTAS ===
+
+Conta: 101
+Nome: Breno Araujo
+CPF: 12345678900
+Telefone: 81999999999
+Saldo: 500.00
+
+Conta: 102
+Nome: Maria Silva
+CPF: 98765432100
+Telefone: 81988888888
+Saldo: 1000.00
+
+===== MENU =====
+1 - Cadastrar conta
+2 - Listar contas
+3 - Deposito
+4 - Saque
+0 - Sair
+
+Opcao: 3
+
+Numero da conta: 101
+Valor  do deposito: 200
+
+Deposito realizado com sucesso!
+
+===== MENU =====
+1 - Cadastrar conta
+2 - Listar contas
+3 - Deposito
+4 - Saque
+0 - Sair
+
+Opcao: 4
+
+Numero da conta: 102
+Valor do saque: 300
+
+Saque realizado com sucesso!
+
+===== MENU =====
+1 - Cadastrar conta
+2 - Listar contas
+3 - Deposito
+4 - Saque
+0 - Sair
+
+Opcao: 0
+
+Programa encerrado!
