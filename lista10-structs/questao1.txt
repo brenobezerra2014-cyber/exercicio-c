@@ -1,24 +1,178 @@
+
 Estado 1
-Nome do estado: Pernambuco
-Numero de veiculos: 34
-Numero de acidentes: 22
+Nome do estado: acre
+Numero de veiculos: 200 
+Numero de acidentes: 2
 
 Estado 2
-Nome do estado: Espirito santo
-Numero de veiculos: 30
+Nome do estado: amazonas
+Numero de veiculos: 10
 Numero de acidentes: 2
 
 Estado 3
-Nome do estado: Sao paulo
-Numero de veiculos: 40
-Numero de acidentes: 12
+Nome do estado: alagoas
+Numero de veiculos: 50
+Numero de acidentes: 1
 
 Estado 4
-Nome do estado: Rio de janeiro
-Numero de veiculos: 12
-Numero de acidentes: 9
+Nome do estado: amapa
+Numero de veiculos: 100
+Numero de acidentes: 8
 
 Estado 5
-Nome do estado: Amazonas
-Numero de veiculos: 19
-Numero de acidentes: 11
+Nome do estado: bahia
+Numero de veiculos: 240
+Numero de acidentes: 32
+
+Estado 6
+Nome do estado: ceara   
+Numero de veiculos: 55
+Numero de acidentes: 5
+
+Estado 7
+Nome do estado: distrito federal
+Numero de veiculos: 1000
+Numero de acidentes: 67
+
+Estado 8
+Nome do estado: espirito santo
+Numero de veiculos: 90
+Numero de acidentes: 0
+
+Estado 9
+Nome do estado: goias
+Numero de veiculos: 12
+Numero de acidentes: 0
+
+Estado 10
+Nome do estado: maranhao
+Numero de veiculos: 100 
+Numero de acidentes: 76
+
+Estado 11
+Nome do estado: mato grosso
+Numero de veiculos: 144
+Numero de acidentes: 98
+
+Estado 12
+Nome do estado: mato grosso do sul
+Numero de veiculos: 111
+Numero de acidentes: 22 
+
+Estado 13
+Nome do estado: minas gerais
+Numero de veiculos: 101
+Numero de acidentes: 100
+
+Estado 14
+Nome do estado: para
+Numero de veiculos: 99
+Numero de acidentes: 7 
+
+Estado 15
+Nome do estado: paraiba
+Numero de veiculos: 91
+Numero de acidentes: 14
+
+Estado 16
+Nome do estado: parana
+Numero de veiculos: 142
+Numero de acidentes: 55
+
+Estado 17
+Nome do estado: pernambuco
+Numero de veiculos: 280
+Numero de acidentes: 88
+
+Estado 18
+Nome do estado: piaui
+Numero de veiculos: 320
+Numero de acidentes: 98
+
+Estado 19
+Nome do estado: rio de janeiro
+Numero de veiculos: 164
+Numero de acidentes: 160
+
+Estado 20
+Nome do estado: rio grande do norte 
+Numero de veiculos: 2
+Numero de acidentes: 1 
+
+Estado 21
+Nome do estado: rio grande do sul 
+Numero de veiculos: 220
+Numero de acidentes: 33
+
+Estado 22
+Nome do estado: rondonia
+Numero de veiculos: 111
+Numero de acidentes: 12
+
+Estado 23
+Nome do estado: roraima
+Numero de veiculos: 200
+Numero de acidentes: 10
+
+Estado 24
+Nome do estado: santa catarina
+Numero de veiculos: 99
+Numero de acidentes: 9
+
+Estado 25
+Nome do estado: sao paulo
+Numero de veiculos: 140
+Numero de acidentes: 139
+
+Estado 26
+Nome do estado: sergipe
+Numero de veiculos: 100
+Numero de acidentes: 99
+
+Maior numero de acidentes:
+rio de janeiro - 160 acidentes
+
+Menor numero de acidentes:
+espirito santo - 0 acidentes
+
+Percentual de acidentes:
+acre: 1.00%
+amazonas: 20.00%
+alagoas: 2.00%
+amapa: 8.00%
+bahia: 13.33%
+ceara: 9.09%
+distrito federal: 6.70%
+espirito santo: 0.00%
+goias: 0.00%
+maranhao: 76.00%
+mato grosso: 68.06%
+mato grosso do sul: 19.82%
+minas gerais: 99.01%
+para: 7.07%
+paraiba: 15.38%
+parana: 38.73%
+pernambuco: 31.43%
+piaui: 30.62%
+rio de janeiro: 97.56%
+rio grande do norte: 50.00%
+rio grande do sul: 15.00%
+rondonia: 10.81%
+roraima: 5.00%
+santa catarina: 9.09%
+sao paulo: 99.29%
+sergipe: 99.00%
+
+Media de acidentes no pais: 43.77
+
+Estados acima da media:
+distrito federal
+maranhao
+mato grosso
+minas gerais
+parana
+pernambuco
+piaui
+rio de janeiro
+sao paulo
+sergipe
