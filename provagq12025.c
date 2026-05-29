@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define TAM_PROD 100
-#define TAM_VENDAS 100
-
 struct Produto {
     int id;
     char descricao[20];
@@ -20,160 +17,230 @@ struct Venda {
 
 
 // QUESTÃO 1
-int buscaSequencialDesc(struct Produto v[], int tam, char x[]) {
+void buscaSequencialDesc(struct Produto v[], int tam, char x[]) {
+
     int i;
+    int achou = 0;
 
     for(i = 0; i < tam; i++) {
+
         if(strcmp(v[i].descricao, x) == 0) {
-            return i;
+
+            printf("Produto encontrado na posicao %d\n", i);
+
+            achou = 1;
         }
     }
 
-    return -1;
+    if(achou == 0) {
+        printf("Produto nao encontrado\n");
+    }
 }
 
 
 // QUESTÃO 2
-int buscaBinariaId(struct Venda v[], int tam, int x) {
-    int ini = 0;
+void buscaBinariaId(struct Venda v[], int tam, int x) {
+
+    int inicio = 0;
     int fim = tam - 1;
     int meio;
+    int achou = 0;
 
-    while(ini <= fim) {
-        meio = (ini + fim) / 2;
+    while(inicio <= fim) {
+
+        meio = (inicio + fim) / 2;
 
         if(v[meio].id == x) {
-            return meio;
+
+            printf("Venda encontrada na posicao %d\n", meio);
+
+            achou = 1;
+
+            break;
         }
+
         else if(x < v[meio].id) {
+
             fim = meio - 1;
         }
+
         else {
-            ini = meio + 1;
+
+            inicio = meio + 1;
         }
     }
 
-    return -1;
+    if(achou == 0) {
+
+        printf("Venda nao encontrada\n");
+    }
 }
 
 
 // QUESTÃO 3
-int alteraProduto(struct Produto v[], int tam) {
+void alteraProduto(struct Produto v[], int tam) {
+
     char desc[20];
-    int pos;
+    int pos = -1;
+    int i;
     char op;
 
     printf("Digite a descricao do produto: ");
     scanf(" %[^\n]", desc);
 
-    pos = buscaSequencialDesc(v, tam, desc);
+    for(i = 0; i < tam; i++) {
 
-    if(pos == -1) {
-        return 0;
+        if(strcmp(v[i].descricao, desc) == 0) {
+
+            pos = i;
+        }
     }
 
-    printf("Deseja alterar a descricao? (s/n): ");
+    if(pos == -1) {
+
+        printf("Produto nao encontrado\n");
+
+        return;
+    }
+
+    printf("Deseja alterar descricao? (s/n): ");
     scanf(" %c", &op);
 
     if(op == 's' || op == 'S') {
+
         printf("Nova descricao: ");
         scanf(" %[^\n]", v[pos].descricao);
     }
 
-    printf("Deseja alterar a quantidade em estoque? (s/n): ");
+    printf("Deseja alterar estoque? (s/n): ");
     scanf(" %c", &op);
 
     if(op == 's' || op == 'S') {
-        printf("Nova quantidade: ");
+
+        printf("Novo estoque: ");
         scanf("%d", &v[pos].qtdEstoque);
     }
 
-    printf("Deseja alterar o valor unitario? (s/n): ");
+    printf("Deseja alterar valor? (s/n): ");
     scanf(" %c", &op);
 
     if(op == 's' || op == 'S') {
+
         printf("Novo valor: ");
         scanf("%f", &v[pos].vlrUnit);
     }
 
-    return 1;
+    printf("Produto alterado com sucesso\n");
 }
 
 
 // QUESTÃO 4
-void venda(struct Produto vp[], int tamProd, struct Venda vv[], int tamVendas) {
+void venda(struct Produto vp[], int tamProd,
+           struct Venda vv[], int tamVendas) {
+
     int i, j;
     int idVenda;
     int qtdDif;
     char desc[20];
     int posProd;
     int qtd;
+    int existe;
 
-    printf("Digite o ID da venda: ");
-    scanf("%d", &idVenda);
+    do {
 
-    while(buscaBinariaId(vv, tamVendas, idVenda) != -1) {
-        printf("ID ja existente. Digite outro: ");
+        existe = 0;
+
+        printf("Digite o ID da venda: ");
         scanf("%d", &idVenda);
-    }
+
+        for(i = 0; i < tamVendas; i++) {
+
+            if(vv[i].id == idVenda) {
+
+                existe = 1;
+            }
+        }
+
+        if(existe == 1) {
+
+            printf("ID ja cadastrado\n");
+        }
+
+    } while(existe == 1);
 
     vv[tamVendas].id = idVenda;
 
-    printf("Quantidade de produtos diferentes (1 a 5): ");
-    scanf("%d", &qtdDif);
+    do {
 
-    while(qtdDif < 1 || qtdDif > 5) {
-        printf("Valor invalido. Digite novamente: ");
+        printf("Quantidade de produtos diferentes (1 a 5): ");
         scanf("%d", &qtdDif);
-    }
+
+    } while(qtdDif < 1 || qtdDif > 5);
 
     vv[tamVendas].qtdProdutosVendidos = qtdDif;
 
     for(i = 0; i < qtdDif; i++) {
 
+        posProd = -1;
+
         do {
+
             printf("Descricao do produto: ");
             scanf(" %[^\n]", desc);
 
-            posProd = buscaSequencialDesc(vp, tamProd, desc);
+            for(j = 0; j < tamProd; j++) {
 
-            if(posProd == -1 || vp[posProd].qtdEstoque == 0) {
-                printf("Produto invalido ou sem estoque.\n");
+                if(strcmp(vp[j].descricao, desc) == 0 &&
+                   vp[j].qtdEstoque > 0) {
+
+                    posProd = j;
+                }
             }
 
-        } while(posProd == -1 || vp[posProd].qtdEstoque == 0);
+            if(posProd == -1) {
+
+                printf("Produto invalido ou sem estoque\n");
+            }
+
+        } while(posProd == -1);
 
         vv[tamVendas].idsProdutos[i] = vp[posProd].id;
 
-        printf("Quantidade vendida: ");
-        scanf("%d", &qtd);
+        do {
 
-        while(qtd < 1 || qtd > vp[posProd].qtdEstoque) {
-            printf("Quantidade invalida. Digite novamente: ");
+            printf("Quantidade vendida: ");
             scanf("%d", &qtd);
-        }
+
+        } while(qtd < 1 || qtd > vp[posProd].qtdEstoque);
 
         vv[tamVendas].qtdsVendidas[i] = qtd;
 
-        vp[posProd].qtdEstoque -= qtd;
+        vp[posProd].qtdEstoque =
+            vp[posProd].qtdEstoque - qtd;
     }
+
+    printf("Venda realizada com sucesso\n");
 }
 
 
 // QUESTÃO 5
-void relatorio(struct Produto vp[], int tamProd, struct Venda vv[], int tamVendas) {
+void relatorio(struct Produto vp[], int tamProd,
+               struct Venda vv[], int tamVendas) {
+
     int i, j, k;
     int totalItens;
-    float totalGeral;
     int posProd;
     float totalProduto;
+    float totalGeral;
 
     for(i = 0; i < tamVendas; i++) {
 
         totalItens = 0;
 
         for(j = 0; j < vv[i].qtdProdutosVendidos; j++) {
-            totalItens += vv[i].qtdsVendidas[j];
+
+            totalItens =
+                totalItens + vv[i].qtdsVendidas[j];
         }
 
         if(totalItens > 2) {
@@ -181,7 +248,8 @@ void relatorio(struct Produto vp[], int tamProd, struct Venda vv[], int tamVenda
             totalGeral = 0;
 
             printf("\n+-------------------------------------------+\n");
-            printf("|              VENDA N.%03d               |\n", vv[i].id);
+            printf("|               VENDA %03d                 |\n",
+                   vv[i].id);
             printf("+-------------------------------------------+\n");
 
             printf("+---+--------------------+--------+---------+\n");
@@ -193,7 +261,9 @@ void relatorio(struct Produto vp[], int tamProd, struct Venda vv[], int tamVenda
                 posProd = -1;
 
                 for(k = 0; k < tamProd; k++) {
+
                     if(vp[k].id == vv[i].idsProdutos[j]) {
+
                         posProd = k;
                     }
                 }
@@ -201,9 +271,11 @@ void relatorio(struct Produto vp[], int tamProd, struct Venda vv[], int tamVenda
                 if(posProd != -1) {
 
                     totalProduto =
-                        vv[i].qtdsVendidas[j] * vp[posProd].vlrUnit;
+                        vv[i].qtdsVendidas[j] *
+                        vp[posProd].vlrUnit;
 
-                    totalGeral += totalProduto;
+                    totalGeral =
+                        totalGeral + totalProduto;
 
                     printf("|%3d|%-20s|%8.2f|%9.2f|\n",
                            vv[i].qtdsVendidas[j],
@@ -214,8 +286,10 @@ void relatorio(struct Produto vp[], int tamProd, struct Venda vv[], int tamVenda
             }
 
             printf("+---+--------------------+--------+---------+\n");
+
             printf("|   |Total Geral         |        |%9.2f|\n",
                    totalGeral);
+
             printf("+---+--------------------+--------+---------+\n");
         }
     }
